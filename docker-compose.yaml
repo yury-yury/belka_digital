@@ -1,0 +1,48 @@
+---
+version: "3.9"
+
+services:
+
+  api:
+    build:
+      context: .
+    container_name: api
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - /home/yury/SkyPro/test_task/belka_digital/.env:/belka_digital/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migrations:
+        condition: service_completed_successfully
+
+  migrations:
+    build:
+      context: .
+    container_name: migrations
+    volumes:
+      - /home/yury/SkyPro/test_task/belka_digital/.env:/belka_digital/.env
+    command: python manage.py migrate
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  postgres:
+      image: postgres:15.0-alpine
+      environment:
+        POSTGRES_DB: ${DB_NAME}
+        POSTGRES_USER: ${DB_USER}
+        POSTGRES_PASSWORD: ${DB_PASSWORD}
+      restart: always
+      container_name: postgres
+      volumes:
+        - /home/yury/SkyPro/test_task/belka_digital/postgresdata:/var/lib/postgresql/data
+        - /home/yury/SkyPro/test_task/belka_digital/.env:/belka_digital/.env
+      healthcheck:
+        test: [ "CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}" ]
+        interval: 5s
+        timeout: 5s
+        retries: 15
+...
