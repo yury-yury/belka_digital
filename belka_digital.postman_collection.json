@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "db97dd24-e119-4353-8516-0060011914e3",
+		"name": "belka_digital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24610581",
+		"_collection_link": "https://speeding-crater-669833.postman.co/workspace/e6f6425b-9060-44d7-8415-8e00acf1dfaa/collection/24610581-db97dd24-e119-4353-8516-0060011914e3?action=share&source=collection_link&creator=24610581"
+	},
+	"item": [
+		{
+			"name": "158.160.54.40:8000/user/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user_1\",\n    \"password\": \"1234password\",\n    \"password_repeat\": \"1234password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "158.160.54.40:8000/user/signup",
+					"host": [
+						"158",
+						"160",
+						"54",
+						"40"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"signup"
+					]
+				},
+				"description": "Регистрация первого пользователя"
+			},
+			"response": []
+		},
+		{
+			"name": "158.160.54.40:8000/user/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user_2\",\n    \"password\": \"1234password\",\n    \"password_repeat\": \"1234password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "158.160.54.40:8000/user/signup",
+					"host": [
+						"158",
+						"160",
+						"54",
+						"40"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"signup"
+					]
+				},
+				"description": "Регистрация второго пользователя"
+			},
+			"response": []
+		},
+		{
+			"name": "158.160.54.40:8000/user/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user_1\",\n    \"password\": \"1234password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "158.160.54.40:8000/user/login",
+					"host": [
+						"158",
+						"160",
+						"54",
+						"40"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"login"
+					]
+				},
+				"description": "Авторизация пользователя"
+			},
+			"response": []
+		},
+		{
+			"name": "158.160.54.40:8000/create/",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user_1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test_1\",\n    \"iron_content\": 0.65,\n    \"silicon_content\": 0.006,\n    \"aluminum_content\": 0.017,\n    \"calcium_content\": 0.005,\n    \"sulfur_content\": 0.0031\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "158.160.54.40:8000/create/",
+					"host": [
+						"158",
+						"160",
+						"54",
+						"40"
+					],
+					"port": "8000",
+					"path": [
+						"create",
+						""
+					]
+				},
+				"description": "Создание данных пробы железнорудного концентрата test_1 от имени пользователя user_1"
+			},
+			"response": []
+		},
+		{
+			"name": "158.160.54.40:8000/create/",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user_1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test_2\",\n    \"iron_content\": 0.63,\n    \"silicon_content\": 0.0059,\n    \"aluminum_content\": 0.0165,\n    \"calcium_content\": 0.0056,\n    \"sulfur_content\": 0.003\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "158.160.54.40:8000/create/",
+					"host": [
+						"158",
+						"160",
+						"54",
+						"40"
+					],
+					"port": "8000",
+					"path": [
+						"create",
+						""
+					]
+				},
+				"description": "Создание данных пробы железнорудного концентрата test_2 от имени пользователя user_1"
+			},
+			"response": []
+		},
+		{
+			"name": "158.160.54.40:8000/create/",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "user_2",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test_3\",\n    \"iron_content\": 0.64,\n    \"silicon_content\": 0.0061,\n    \"aluminum_content\": 0.0175,\n    \"calcium_content\": 0.0059,\n    \"sulfur_content\": 0.0035\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "158.160.54.40:8000/create/",
+					"host": [
+						"158",
+						"160",
+						"54",
+						"40"
+					],
+					"port": "8000",
+					"path": [
+						"create",
+						""
+					]
+				},
+				"description": "Создание данных пробы железнорудного концентрата test_3 от имени пользователя user_2"
+			},
+			"response": []
+		},
+		{
+			"name": "158.160.54.40:8000/create/",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "user_2",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test_4\",\n    \"iron_content\": 0.65,\n    \"silicon_content\": 0.0065,\n    \"aluminum_content\": 0.018,\n    \"calcium_content\": 0.0061,\n    \"sulfur_content\": 0.00375\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "158.160.54.40:8000/create/",
+					"host": [
+						"158",
+						"160",
+						"54",
+						"40"
+					],
+					"port": "8000",
+					"path": [
+						"create",
+						""
+					]
+				},
+				"description": "Создание данных пробы железнорудного концентрата test_4 от имени пользователя user_2"
+			},
+			"response": []
+		},
+		{
+			"name": "158.160.54.40:8000/stats/?year=2023&month=9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "user_2",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "158.160.54.40:8000/stats/?year=2023&month=9",
+					"host": [
+						"158",
+						"160",
+						"54",
+						"40"
+					],
+					"port": "8000",
+					"path": [
+						"stats",
+						""
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2023"
+						},
+						{
+							"key": "month",
+							"value": "9"
+						}
+					]
+				},
+				"description": "Получение статистики по пробам имеющимся в выбранном месяце"
+			},
+			"response": []
+		}
+	]
+}

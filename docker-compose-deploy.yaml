@@ -5,13 +5,13 @@ services:
 
   api:
     image:
-      yuryyury/tg_bot:version-1
+      yuryyury/belka_digital:version-1
     container_name: api
     command: python manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
     volumes:
-      - /home/yury_yury/test_task/.env:/test_task/.env
+      - /home/yury_yury/belka_digital/.env:/test_task/.env
     depends_on:
       postgres:
         condition: service_healthy
@@ -20,29 +20,14 @@ services:
 
   migrations:
     image:
-      yuryyury/tg_bot:version-1
+      yuryyury/belka_digital:version-1
     container_name: migrations
     volumes:
-      - /home/yury_yury/test_task/.env:/test_task/.env
+      - /home/yury_yury/belka_digital/.env:/test_task/.env
     command: python manage.py migrate
     depends_on:
       postgres:
         condition: service_healthy
-
-  bot:
-    image:
-      yuryyury/tg_bot:version-1
-    container_name: bot
-    command: python manage.py runbot
-    volumes:
-      - /home/yury_yury/test_task/.env:/test_task/.env
-    environment:
-      TG_TOKEN: ${TG_TOKEN}
-    depends_on:
-      postgres:
-        condition: service_healthy
-      migrations:
-        condition: service_completed_successfully
 
   postgres:
       image: postgres:15.0-alpine
@@ -53,8 +38,8 @@ services:
       restart: always
       container_name: postgres
       volumes:
-        - /home/yury_yury/test_task/postgresdata:/var/lib/postgresql/data
-        - /home/yury_yury/test_task/.env:/test_task/.env
+        - /home/yury_yury/belka_digital/postgresdata:/var/lib/postgresql/data
+        - /home/yury_yury/belka_digital/.env:/test_task/.env
       healthcheck:
         test: [ "CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}" ]
         interval: 5s

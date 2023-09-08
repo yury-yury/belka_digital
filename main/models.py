@@ -18,5 +18,5 @@ class OreSample(models.Model):
         The Meta class contains the common name of the model instance in the singular and plural used
         in the administration panel.
         """
-        verbose_name: str = "Категория"
-        verbose_name_plural: str = "Категории"
+        verbose_name: str = "Проба концентрата"
+        verbose_name_plural: str = "Пробы концентрата"
